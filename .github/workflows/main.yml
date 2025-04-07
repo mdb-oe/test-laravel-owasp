@@ -20,9 +20,11 @@ jobs:
           tools: composer
 
       - name: Install Composer dependencies
+        working-directory: ./laravel
         run: composer install --no-interaction --no-progress --prefer-dist
 
       - name: Run Composer Audit
+        working-directory: ./laravel
         run: composer audit --no-interaction
 
       - name: Dependency Check
